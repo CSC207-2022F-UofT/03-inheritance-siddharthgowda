@@ -6,6 +6,37 @@
  * helpful while working through this exercise.
  */
 
+
+public class CrossbodyBag extends Bag {
+
+    private int numberOfStraps;
+    public CrossbodyBag(String color, int capacity, int numberOfStraps_){
+        super(color, capacity);
+        this.numberOfStraps = numberOfStraps_;
+
+    }
+
+    public int getNumberOfStraps(){
+        return this.numberOfStraps;
+    }
+
+    @Override
+    public void enhance(){
+        super.increaseCapacity(2);
+    }
+    @Override
+    public String toString(){
+        String color = super.getColor();
+        int capacity = super.getCapacity();
+        String val = color + " Crossbody Bag with " + this.numberOfStraps +
+                " straps (" + super.getNumberOfContents() + " / " +
+                capacity + ")";
+        return val;
+    }
+
+
+}
+
 /*
  * TODO: Create a public class named CrossbodyBag which is a subclass of Bag
  *       In addition to the attributes in Bag, the CrossbodyBag should have an
